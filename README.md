@@ -1,4 +1,4 @@
-# catatdong. — To-do List Kuliah
+# catatdong. To-do List Kuliah
 
 catatdong adalah website to-do list sederhana yang membantu mencatat tugas tugas kamu
 
