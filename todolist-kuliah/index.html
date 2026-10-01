@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="To-do list sederhana untuk mencatat dan mengatur tugas kuliah.">
+  <meta name="color-scheme" content="light dark">
+  <title>Catat — To-do List Kuliah</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23192c47'/%3E%3Cpath d='M18 32l10 10 18-22' fill='none' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#utama">Lewati ke konten</a>
+  <header class="site-header container">
+    <a class="brand" href="#utama" data-field="nama">catat.</a>
+    <div class="header-right"><span class="header-label">To-do list kuliah</span><button type="button" class="icon-button" id="theme-button" aria-label="Aktifkan mode gelap" title="Ganti tema">☾</button></div>
+  </header>
+  <main id="utama" class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <p id="today" class="today"></p>
+      <h1 id="page-title" data-field="judul">Daftar tugas kamu</h1>
+      <p class="intro-description" data-field="deskripsi"></p>
+    </section>
+    <div class="workspace">
+      <aside class="add-panel" aria-labelledby="form-title">
+        <div class="panel-heading"><span class="small-plus" aria-hidden="true">+</span><h2 id="form-title">Tambah tugas</h2></div>
+        <p class="form-description">catat tugas kamu di sini, setelah dicatat jangan lupa dikerjakan</p>
+        <form id="task-form">
+          <label for="task-title">Nama tugas <span aria-hidden="true">*</span></label>
+          <input type="text" id="task-title" name="judul" placeholder="contoh: membuat fitur tambah tugas" maxlength="160" required>
+          <label for="task-course">Nama mata kuliah <span class="optional">opsional</span></label>
+          <input type="text" id="task-course" name="matkul" placeholder="contoh : pemrograman web" maxlength="80">
+          <label for="task-date">Deadline <span class="optional">opsional</span></label>
+          <input type="date" id="task-date" name="deadline">
+          <button type="submit" class="primary-button">Tambah tugas</button>
+        </form>
+        <p class="form-note">Centang tugas setelah selesai.</p>
+      </aside>
+      <section class="list-panel" aria-labelledby="list-title">
+        <div class="list-heading"><div><h2 id="list-title">Tugas kamu</h2><p id="task-summary" class="task-summary"></p></div><span id="completed-count" class="completed-count"></span></div>
+        <div class="progress-track" role="progressbar" aria-label="Kemajuan penyelesaian tugas" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="progress-fill"></span></div>
+        <div class="filters" role="group" aria-label="Filter status tugas">
+          <button type="button" class="filter-button" data-filter="semua" aria-pressed="true">Semua <span id="count-all">0</span></button>
+          <button type="button" class="filter-button" data-filter="belum" aria-pressed="false">Belum selesai <span id="count-pending">0</span></button>
+          <button type="button" class="filter-button" data-filter="selesai" aria-pressed="false">Selesai <span id="count-done">0</span></button>
+        </div>
+        <ul id="task-list" class="task-list"></ul>
+        <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">✓</span><h3 id="empty-title">Belum ada tugas</h3><p id="empty-description">Tambahkan tugas lewat form di samping.</p></div>
+        <p id="result-count" class="result-count" aria-live="polite"></p>
+      </section>
+    </div>
+    <p id="storage-warning" class="storage-warning" role="status" hidden></p>
+  </main>
+  <footer class="container footer"><p>Catatan kecil untuk hari yang lebih teratur.</p><p>© <span id="year"></span> <span data-field="pemilik"></span></p></footer>
+  <div class="toast" id="toast" hidden><p id="toast-text" role="status"></p><button type="button" id="undo-button" hidden>Urungkan</button><button type="button" class="toast-close" id="toast-close" aria-label="Tutup notifikasi">×</button></div>
+  <noscript><p class="noscript">Aktifkan JavaScript untuk menambah dan mengatur tugas.</p></noscript>
+</body>
+</html>
