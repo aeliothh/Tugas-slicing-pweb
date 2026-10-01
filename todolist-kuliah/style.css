@@ -1,4 +1,3 @@
-/* Plain CSS, tanpa Bootstrap/Tailwind. Seluruh warna: navy dan monokrom. */
 :root { color-scheme:light; --bg:#f7f7f7; --paper:#fff; --ink:#16191e; --navy:#192c47; --muted:#626873; --border:#e1e3e7; --soft:#f0f2f5; --focus:#192c47; --button:#192c47; --button-text:#fff; }
 html[data-theme="dark"] { color-scheme:dark; --bg:#111419; --paper:#1a202a; --ink:#f3f4f6; --navy:#f3f4f6; --muted:#b0b7c2; --border:#343c49; --soft:#232d3c; --focus:#fff; --button:#e9edf3; --button-text:#192c47; }
 * { box-sizing:border-box; }
